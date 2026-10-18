@@ -2,7 +2,7 @@
   "leadershipChairs": [
     {
       "id": "lc-1",
-      "name": "[Chief kladdwdwpjdw Name Placeholder]",
+      "name": "[Chief Name Placeholder]",
       "role": "[Chief Patron & Honorary Vice Chancellor Placeholder]",
       "category": "leadership",
       "isTba": true
@@ -41,13 +41,6 @@
       "role": "[Co-ordinating Chair Designation Placeholder]",
       "category": "leadership",
       "isTba": true
-    },
-    {
-      "id": "lc-7",
-      "name": "[XYZMSA]",
-      "role": "[SMTGSMTG]",
-      "category": "DICTATOR",
-      "isTba": false
     }
   ],
   "committeeMembers": [
@@ -149,13 +142,6 @@
       "name": "[Expo Lead Name Placeholder]",
       "role": "[Poster & Design Expo Lead Designation Placeholder]",
       "category": "student",
-      "isTba": true
-    },
-    {
-      "id": "sv-8",
-      "name": "[NONAME]",
-      "role": "[NOROLE]",
-      "category": "NOstudent",
       "isTba": true
     }
   ]
