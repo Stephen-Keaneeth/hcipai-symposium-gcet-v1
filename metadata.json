@@ -1,0 +1,6 @@
+{
+  "name": "HCIPAI Symposium 2027",
+  "description": "Official website for the HCIPAI Symposium 2027 on Human-Computer Interaction for Interactive & Immersive Experience.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

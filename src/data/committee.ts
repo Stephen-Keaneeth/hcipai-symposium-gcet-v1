@@ -1,0 +1,150 @@
+import { CommitteePerson } from '../types';
+
+export const leadershipChairs: CommitteePerson[] = [
+  {
+    id: 'lc-1',
+    name: '[Chief Patron Name Placeholder]',
+    role: '[Chief Patron & Honorary Vice Chancellor Placeholder]',
+    category: 'leadership',
+    isTba: true,
+  },
+  {
+    id: 'lc-2',
+    name: '[Honorary Chair Name Placeholder]',
+    role: '[Honorary Chair & Dean of Research Placeholder]',
+    category: 'leadership',
+    isTba: true,
+  },
+  {
+    id: 'lc-3',
+    name: '[General Chair Name Placeholder]',
+    role: '[General Chair Designation Placeholder]',
+    category: 'leadership',
+    isTba: true,
+  },
+  {
+    id: 'lc-4',
+    name: '[Program Chair Name Placeholder]',
+    role: '[Program Chair Designation Placeholder]',
+    category: 'leadership',
+    isTba: true,
+  },
+  {
+    id: 'lc-5',
+    name: '[Organizing Secretary Name Placeholder]',
+    role: '[Organizing Secretary Designation Placeholder]',
+    category: 'leadership',
+    isTba: true,
+  },
+  {
+    id: 'lc-6',
+    name: '[Co-ordinating Chair Name Placeholder]',
+    role: '[Co-ordinating Chair Designation Placeholder]',
+    category: 'leadership',
+    isTba: true,
+  },
+];
+
+export const committeeMembers: CommitteePerson[] = [
+  {
+    id: 'cm-1',
+    name: '[Technical Program Chair Name Placeholder]',
+    role: '[Technical Program Chair Designation Placeholder]',
+    category: 'portfolio',
+    isTba: true,
+  },
+  {
+    id: 'cm-2',
+    name: '[Publications Lead Name Placeholder]',
+    role: '[Publications Lead Designation Placeholder]',
+    category: 'portfolio',
+    isTba: true,
+  },
+  {
+    id: 'cm-3',
+    name: '[Finance & Grants Lead Name Placeholder]',
+    role: '[Finance & Grants Lead Designation Placeholder]',
+    category: 'portfolio',
+    isTba: true,
+  },
+  {
+    id: 'cm-4',
+    name: '[Media & PR Lead Name Placeholder]',
+    role: '[Media & Public Relations Designation Placeholder]',
+    category: 'portfolio',
+    isTba: true,
+  },
+  {
+    id: 'cm-5',
+    name: '[Experience Zones Lead Name Placeholder]',
+    role: '[Experience Zones Lead Designation Placeholder]',
+    category: 'portfolio',
+    isTba: true,
+  },
+  {
+    id: 'cm-6',
+    name: '[Committee Member Name Placeholder]',
+    role: '[Portfolio Designation Placeholder]',
+    category: 'portfolio',
+    isTba: true,
+  },
+];
+
+export const studentVolunteers: CommitteePerson[] = [
+  {
+    id: 'sv-1',
+    name: '[Student Lead Chair Name Placeholder]',
+    role: '[Student Lead Chair Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-2',
+    name: '[Tech Pods Coordinator Name Placeholder]',
+    role: '[Tech Pods Coordinator Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-3',
+    name: '[Design & Stage Ops Name Placeholder]',
+    role: '[Design & Stage Ops Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-4',
+    name: '[Student Coordinator Name Placeholder]',
+    role: '[Student Coordinator Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-5',
+    name: '[Helpdesk Lead Name Placeholder]',
+    role: '[Registration & Helpdesk Lead Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-6',
+    name: '[AV & Live Streaming Lead Name Placeholder]',
+    role: '[AV & Live Streaming Lead Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-7',
+    name: '[Interactive XR Lead Name Placeholder]',
+    role: '[Interactive XR Demos Lead Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+  {
+    id: 'sv-8',
+    name: '[Expo Lead Name Placeholder]',
+    role: '[Poster & Design Expo Lead Designation Placeholder]',
+    category: 'student',
+    isTba: true,
+  },
+];
