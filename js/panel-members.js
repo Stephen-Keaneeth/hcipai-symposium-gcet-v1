@@ -1,78 +1,5 @@
 // Panel members data & filter interactivity
-const speakersList = [
-  {
-    id: 'speaker-1',
-    name: '[Keynote Speaker 1 Name Placeholder]',
-    designation: '[Designation / Academic Role Placeholder]',
-    affiliation: '[University / Organization Affiliation Placeholder]',
-    roleCategory: 'Keynote Speaker',
-    isTba: true,
-  },
-  {
-    id: 'speaker-2',
-    name: '[Keynote Speaker 2 Name Placeholder]',
-    designation: '[Designation / Academic Role Placeholder]',
-    affiliation: '[University / Organization Affiliation Placeholder]',
-    roleCategory: 'Keynote Speaker',
-    isTba: true,
-  },
-  {
-    id: 'speaker-3',
-    name: '[Keynote Speaker 3 Name Placeholder]',
-    designation: '[Designation / Academic Role Placeholder]',
-    affiliation: '[University / Organization Affiliation Placeholder]',
-    roleCategory: 'Keynote Speaker',
-    isTba: true,
-  },
-  {
-    id: 'speaker-4',
-    name: '[Panelist 1 Name Placeholder]',
-    designation: '[Designation / Industry Role Placeholder]',
-    affiliation: '[Company / Research Lab Placeholder]',
-    roleCategory: 'Panelist',
-    isTba: true,
-  },
-  {
-    id: 'speaker-5',
-    name: '[Panelist 2 Name Placeholder]',
-    designation: '[Designation / Academic Role Placeholder]',
-    affiliation: '[Design Institute / University Placeholder]',
-    roleCategory: 'Panelist',
-    isTba: true,
-  },
-  {
-    id: 'speaker-6',
-    name: '[Workshop Lead 1 Name Placeholder]',
-    designation: '[Lead XR / UI Architect Placeholder]',
-    affiliation: '[Studio / Enterprise Lab Placeholder]',
-    roleCategory: 'Workshop Lead',
-    isTba: true,
-  },
-  {
-    id: 'speaker-7',
-    name: '[Panelist 3 Name Placeholder]',
-    designation: '[Cognitive Ergonomics Lead Placeholder]',
-    affiliation: '[Research Center / University Placeholder]',
-    roleCategory: 'Panelist',
-    isTba: true,
-  },
-  {
-    id: 'speaker-8',
-    name: '[Panelist 4 Name Placeholder]',
-    designation: '[Designation / Specialization Placeholder]',
-    affiliation: '[Institution Affiliation Placeholder]',
-    roleCategory: 'Panelist',
-    isTba: true,
-  },
-  {
-    id: 'speaker-9',
-    name: '[Workshop Lead 2 Name Placeholder]',
-    designation: '[Technical Workshop Lead Placeholder]',
-    affiliation: '[Institution Affiliation Placeholder]',
-    roleCategory: 'Workshop Lead',
-    isTba: true,
-  },
-];
+import speakersList from '../data/speakers.json';
 
 let activeFilter = 'All';
 
@@ -93,18 +20,24 @@ function renderSpeakers() {
 
   container.innerHTML = filtered.map(speaker => `
     <div class="bg-white rounded-xl border border-[#cbd5e1] p-5 text-center flex flex-col justify-between shadow-xs hover:border-[#6a4766]/50 hover:shadow-md transition-all group">
-      <!-- Photo Placeholder Area -->
-      <div class="w-full aspect-[4/4.5] rounded-t-2xl rounded-b-lg border-2 border-dashed border-[#94a3b8]/60 bg-[#f8fafc] flex flex-col items-center justify-center p-4 mb-4 group-hover:bg-[#fbf9fc] transition-colors relative">
-        <div class="w-16 h-16 rounded-full bg-[#f4edf3] text-[#6a4766] flex items-center justify-center mb-2 shadow-2xs border border-[#e6b9de]/60">
-          <i data-lucide="image" class="w-8 h-8"></i>
+      <!-- Photo Area -->
+      ${speaker.photo ? `
+        <div class="w-full aspect-[4/4.5] rounded-t-2xl rounded-b-lg overflow-hidden bg-[#f8fafc] mb-4 border border-[#e2e8f0]">
+          <img src="${speaker.photo}" alt="${speaker.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
-        <span class="text-xs font-bold text-[#4e324c] uppercase tracking-wider block">
-          [Portrait Photo Placeholder]
-        </span>
-        <span class="text-[11px] text-[#64748b] mt-0.5 block">
-          Insert Speaker Portrait Here
-        </span>
-      </div>
+      ` : `
+        <div class="w-full aspect-[4/4.5] rounded-t-2xl rounded-b-lg border-2 border-dashed border-[#94a3b8]/60 bg-[#f8fafc] flex flex-col items-center justify-center p-4 mb-4 group-hover:bg-[#fbf9fc] transition-colors relative">
+          <div class="w-16 h-16 rounded-full bg-[#f4edf3] text-[#6a4766] flex items-center justify-center mb-2 shadow-2xs border border-[#e6b9de]/60">
+            <i data-lucide="image" class="w-8 h-8"></i>
+          </div>
+          <span class="text-xs font-bold text-[#4e324c] uppercase tracking-wider block">
+            [Portrait Photo Placeholder]
+          </span>
+          <span class="text-[11px] text-[#64748b] mt-0.5 block">
+            Insert Speaker Portrait Here
+          </span>
+        </div>
+      `}
 
       <!-- Speaker Details -->
       <div class="w-full flex flex-col items-center">
