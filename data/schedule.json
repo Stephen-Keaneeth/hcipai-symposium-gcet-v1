@@ -1,0 +1,216 @@
+{
+  "day1": [
+    {
+      "id": "s1-1",
+      "day": 1,
+      "timeSlot": "08:30 AM – 09:30 AM",
+      "tag": "CHECK-IN",
+      "tagType": "checkin",
+      "location": "Grand Atrium & Foyer",
+      "title": "Registration, Morning Tea & Welcome Kit Distribution",
+      "description": "Arrive, receive your symposium badge, exclusive HCIPAI 2027 technical proceedings dossier, and traditional South Indian welcome refreshment. Meet fellow delegates in the informal lounge.",
+      "kitInclusions": "Kit Inclusions: Digital badge, NFC research ledger & hardbound abstracts."
+    },
+    {
+      "id": "s1-2",
+      "day": 1,
+      "timeSlot": "09:30 AM – 10:30 AM",
+      "tag": "KEYNOTE ADDRESS",
+      "tagType": "keynote",
+      "subTag": "PLENARY TRACK",
+      "location": "Dr. APJ Abdul Kalam Auditorium",
+      "title": "Inaugural Ceremony & Keynote: Next-Gen Human-AI Collaboration",
+      "description": "Ceremonial lighting of the lamp followed by an opening keynote deconstructing multimodal interaction models, cognitive load offloading, and co-adaptive intelligence across mixed reality spaces.",
+      "speakerName": "Prof. Ananya Sen, PhD",
+      "speakerTitle": "Chair of Cognitive Systems, IIT Bombay",
+      "speakerImage": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop",
+      "keyTakeaways": [
+        "Predictive neuro-symbolic UI design",
+        "Human agency preservation metrics",
+        "Cross-cultural multimodal datasets"
+      ]
+    },
+    {
+      "id": "s1-3",
+      "day": 1,
+      "timeSlot": "10:45 AM – 12:30 PM",
+      "tag": "PANEL DISCUSSION",
+      "tagType": "panel",
+      "location": "Hall Alpha (Live Streamed)",
+      "title": "Immersive Frontiers: AR/VR and Spatial Experiences",
+      "description": "Industry pioneers and HCI academicians discuss spatial audio fiducials, gaze-contingent rendering, and tactile haptic illusions in everyday mixed reality environments.",
+      "panellists": [
+        {
+          "name": "Dr. Vikram R.",
+          "role": "Director of XR",
+          "org": "Meta Reality Labs",
+          "avatarInitials": "VR"
+        },
+        {
+          "name": "Shreya Nambiar",
+          "role": "Principal Spatial Designer",
+          "org": "Apple",
+          "avatarInitials": "SN"
+        },
+        {
+          "name": "Prof. Matthew Klein",
+          "role": "HCI Lab",
+          "org": "ETH Zürich",
+          "avatarInitials": "MK"
+        }
+      ]
+    },
+    {
+      "id": "s1-4",
+      "day": 1,
+      "timeSlot": "12:30 PM – 01:30 PM",
+      "tag": "MIDDAY PAUSE",
+      "tagType": "lunch",
+      "location": "Pavilion B & Gallery",
+      "title": "Networking Lunch & Interactive Zone Walkthrough",
+      "description": "Catered regional lunch buffet in Dining Pavilion B. Concurrent informal demos available at the HCIPAI Showcase Pavilion with student prototype booths open for exploration."
+    },
+    {
+      "id": "s1-5",
+      "day": 1,
+      "timeSlot": "01:30 PM – 03:30 PM",
+      "tag": "PARALLEL WORKSHOPS",
+      "tagType": "workshop",
+      "subTag": "BYOD (Laptop + Unity/WebXR Ready)",
+      "location": "Studio Labs A & B",
+      "title": "Parallel Hands-on Technical Workshops",
+      "description": "Intensive instructor-led laboratory modules with live development kits and real-time mentor critique.",
+      "workshops": [
+        {
+          "track": "TRACK A",
+          "location": "Studio Lab 102 [TBA]",
+          "title": "Spatial UI Design & Micro-Gestures",
+          "description": "Learn practical spatial hierarchy, physics-based depth cues, and fine finger tracking gesture sets using OpenXR and web-based spatial SDKs.",
+          "facilitator": "Siddharth Rao [TBA]",
+          "seats": "Cap: 45 seats [PROPOSED]"
+        },
+        {
+          "track": "TRACK B",
+          "location": "Computing Lab 204 [TBA]",
+          "title": "Conversational AI Evaluation Frameworks",
+          "description": "Rigorous methodologies for human-in-the-loop qualitative testing, prompt drift quantification, and multimodal dialogue ergonomics.",
+          "facilitator": "Dr. Priya Sundaram [TBA]",
+          "seats": "Cap: 45 seats [PROPOSED]"
+        }
+      ]
+    },
+    {
+      "id": "s1-6",
+      "day": 1,
+      "timeSlot": "03:45 PM – 05:00 PM",
+      "tag": "RESEARCH SHOWCASE",
+      "tagType": "showcase",
+      "location": "Seminar Halls 1 & 2",
+      "title": "Paper Presentation & Peer-Reviewed Research Showcase",
+      "description": "Oral presentations of 8 top-rated accepted papers covering affective computing, tactile feedforward systems, and indigenous language voice interfaces. Session concludes with Day 1 Q&A synthesis."
+    },
+    {
+      "id": "s1-7",
+      "day": 1,
+      "timeSlot": "05:15 PM – 06:15 PM",
+      "tag": "EVENING DOCTORAL COLLOQUIUM",
+      "tagType": "colloquium",
+      "subTag": "[Session Roster Pending Confirmation]",
+      "location": "Studio Lab 104",
+      "title": "Doctoral Consortia & Emerging HCI Methodologies",
+      "description": "Mentorship critique for doctoral research proposals with focus on somatic evaluation, multimodal telepresence, and algorithmic ethics in interactive computing.",
+      "mentors": [
+        {
+          "role": "[Lead Mentor - TBA]",
+          "affiliation": "Invited Senior Academician • HCIPAI Consortium",
+          "isTba": true
+        },
+        {
+          "role": "[Panelist - To Be Confirmed]",
+          "affiliation": "Faculty Reviewer • ACM SIGCHI Chapter",
+          "isTba": true
+        }
+      ]
+    }
+  ],
+  "day2": [
+    {
+      "id": "s2-1",
+      "day": 2,
+      "timeSlot": "09:30 AM – 10:45 AM",
+      "tag": "KEYNOTE ADDRESS",
+      "tagType": "keynote",
+      "subTag": "MORNING PLENARY",
+      "location": "Dr. APJ Abdul Kalam Auditorium",
+      "title": "Morning Plenary: South Asian HCI Paradigms & Vernacular Multimodal Synthesis",
+      "description": "Keynote and panel address on indigenous design systems, contextual voice ergonomics for regional dialects, and inclusive digital accessibility frameworks.",
+      "speakerName": "Dr. Marcus Vance",
+      "speakerTitle": "Principal Research Scientist, Spatial Computing & Sensory Lab",
+      "keyTakeaways": [
+        "Linguistic nuances in speech UX across Indic scripts",
+        "Culturally grounded tactile interface standards",
+        "Equitable tech deployment in low-connectivity zones"
+      ]
+    },
+    {
+      "id": "s2-2",
+      "day": 2,
+      "timeSlot": "11:00 AM – 01:00 PM",
+      "tag": "PARALLEL WORKSHOPS",
+      "tagType": "workshop",
+      "subTag": "BYOD Hands-On Masterclasses",
+      "location": "Studio Labs A & B",
+      "title": "Parallel Hands-on Masterclasses: Rapid Prototyping & Sensory Cues",
+      "description": "Hands-on hardware labs on wearable haptic rings, eye-tracking telemetry, and cross-platform VisionOS prototyping toolkits.",
+      "workshops": [
+        {
+          "track": "STUDIO A",
+          "location": "Hardware Prototyping Lab [TBA]",
+          "title": "Tactile Display Fabrication & Micro-Haptics",
+          "description": "Building custom actuator controllers and calibrating vibrotactile feedback envelopes for mixed-reality objects.",
+          "facilitator": "Elena Rostova [Workshop Lead]",
+          "seats": "Cap: 35 seats [PROPOSED]"
+        },
+        {
+          "track": "STUDIO B",
+          "location": "Design Studio 301 [TBA]",
+          "title": "Vernacular Multimodal Design Systems",
+          "description": "Creating typography tokens, gesture palettes, and audio cues optimized for non-Latin multilingual user bases.",
+          "facilitator": "Prof. Rajesh K. Varma [NID]",
+          "seats": "Cap: 40 seats [PROPOSED]"
+        }
+      ]
+    },
+    {
+      "id": "s2-3",
+      "day": 2,
+      "timeSlot": "01:00 PM – 02:15 PM",
+      "tag": "MIDDAY PAUSE",
+      "tagType": "lunch",
+      "location": "Dining Pavilion B & Courtyard",
+      "title": "Networking Fellowship Lunch & Live Interactive Demonstrations",
+      "description": "Enjoy regional Hyderabad culinary selections while interacting with nominated delegate booths and student demo presentations."
+    },
+    {
+      "id": "s2-4",
+      "day": 2,
+      "timeSlot": "02:30 PM – 04:30 PM",
+      "tag": "RESEARCH SHOWCASE",
+      "tagType": "showcase",
+      "location": "Exhibition Hall & Gallery",
+      "title": "Doctoral Colloquium, Poster Session & Research-in-Progress",
+      "description": "Interactive walk-around poster session showcasing 32 accepted doctoral research works and work-in-progress demos with peer voting for the People’s Choice Award."
+    },
+    {
+      "id": "s2-5",
+      "day": 2,
+      "timeSlot": "05:00 PM – 06:30 PM",
+      "tag": "KEYNOTE ADDRESS",
+      "tagType": "keynote",
+      "subTag": "VALEDICTORY & BANQUET",
+      "location": "Dr. APJ Abdul Kalam Auditorium",
+      "title": "Valedictory Ceremony & HCIPAI Awards Banquet",
+      "description": "Concluding synthesis, best paper presentations, student innovation awards, felicitations to organizing committees, and formal handover to HCIPAI 2028."
+    }
+  ]
+}

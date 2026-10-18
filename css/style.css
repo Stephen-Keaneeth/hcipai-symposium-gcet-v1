@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  
+  --color-primary-plum: #6a4766;
+  --color-deep-plum: #4e324c;
+  --color-brand-purple: #7c3aed;
+  --color-sky-blue: #3b82f6;
+  --color-sky-blue-light: #60a5fa;
+  --color-sky-mist: #e0f2fe;
+  --color-kolam-blue: #dbeafe;
+  --color-kolam-lavender: #e9d5ff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  background-color: #f9f9ff;
+  color: #111c2d;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #e6b9de;
+  color: #51304e;
+}
+
+.font-display {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+/* Kolam architectural pattern background utility */
+.bg-kolam-pattern {
+  background-color: #f9f9ff;
+  background-image: radial-gradient(#dbeafe 1px, transparent 1px), radial-gradient(#e9d5ff 1px, #f9f9ff 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.bg-arch-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+}
+
+/* Icon sizing helper */
+[data-lucide] {
+  display: inline-block;
+  vertical-align: middle;
+}

@@ -9,13 +9,1161 @@
     <meta property="og:description" content="Official website for the HCIPAI Symposium 2027 on Human-Computer Interaction for Interactive & Immersive Experience." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['"Playfair Display"', 'Georgia', 'serif'],
+              sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            },
+            colors: {
+              'primary-plum': '#6a4766',
+              'deep-plum': '#4e324c',
+              'brand-purple': '#7c3aed',
+              'sky-blue': '#3b82f6',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body class="bg-[#f9f9ff] text-[#111c2d] antialiased selection:bg-[#e6b9de] selection:text-[#51304e]">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-[#f9f9ff] text-[#111c2d] antialiased selection:bg-[#e6b9de] selection:text-[#51304e] min-h-screen flex flex-col">
+
+    <!-- Global Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-[#e2e8f0] shadow-[0_2px_12px_rgba(106,71,102,0.04)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- Logo & Title -->
+          <a href="index.html" class="flex items-center gap-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#6a4766] rounded-md p-1 -ml-1 transition-transform">
+            <div class="w-10 h-10 shrink-0 rounded-md overflow-hidden bg-white p-0.5 border border-[#e2e8f0]/80 shadow-xs group-hover:border-[#6a4766]/40 transition-colors">
+              <img
+                src="HCIPAI png logo(1) (1).png"
+                alt="HCIPAI Official Logo"
+                data-fallback="HCIPAI_logo.svg"
+                class="w-full h-full object-contain"
+              />
+            </div>
+            <div class="flex flex-col">
+              <span class="font-display text-base sm:text-lg md:text-xl font-bold text-[#4e324c] tracking-tight leading-tight group-hover:text-[#6a4766] transition-colors">
+                HCIPAI Symposium 2027
+              </span>
+              <span class="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-[#64748b] tracking-wider uppercase leading-none mt-0.5">
+                MARCH 18–19, 2027 • HCI FOR INTERACTIVE &amp; IMMERSIVE EXPERIENCE
+              </span>
+            </div>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2" aria-label="Main Navigation">
+            <a href="index.html" class="relative px-3.5 py-2 text-sm font-semibold text-[#51304e] transition-all duration-200">
+              Home
+              <span class="absolute bottom-0 left-3 right-3 h-[2px] bg-[#6a4766] rounded-full"></span>
+            </a>
+            <a href="schedule.html" class="relative px-3.5 py-2 text-sm font-medium text-[#475569] hover:text-[#51304e] transition-all duration-200">
+              Schedule
+            </a>
+            <a href="panel-members.html" class="relative px-3.5 py-2 text-sm font-medium text-[#475569] hover:text-[#51304e] transition-all duration-200">
+              Panel Members
+            </a>
+            <a href="organizing-committee.html" class="relative px-3.5 py-2 text-sm font-medium text-[#475569] hover:text-[#51304e] transition-all duration-200">
+              Organizing Committee
+            </a>
+            <a href="venue-contact.html" class="relative px-3.5 py-2 text-sm font-medium text-[#475569] hover:text-[#51304e] transition-all duration-200">
+              Venue &amp; Contact
+            </a>
+          </nav>
+
+          <!-- Right Action: Register Now -->
+          <div class="hidden lg:flex items-center gap-3">
+            <a
+              href="https://account.indiahci.org/auth"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#6a4766] hover:bg-[#51304e] active:scale-[0.98] text-white px-5 py-2.5 rounded-md text-sm font-semibold tracking-wide shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer"
+            >
+              <span>Register Now</span>
+              <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80"></i>
+            </a>
+          </div>
+
+          <!-- Mobile Controls -->
+          <div class="flex lg:hidden items-center gap-2">
+            <a
+              href="https://account.indiahci.org/auth"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="bg-[#6a4766] text-white px-3 py-1.5 rounded text-xs font-semibold flex items-center gap-1 shadow-2xs"
+            >
+              <span>Register</span>
+              <i data-lucide="external-link" class="w-3 h-3 opacity-80"></i>
+            </a>
+
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              class="p-2 rounded-md text-[#4e324c] hover:bg-[#f3e8ff]/50 border border-[#e2e8f0] focus:outline-none focus:ring-2 focus:ring-[#6a4766]"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+            >
+              <i id="menu-icon-open" data-lucide="menu" class="w-6 h-6"></i>
+              <i id="menu-icon-close" data-lucide="x" class="w-6 h-6 hidden"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div id="mobile-menu-drawer" class="hidden lg:hidden bg-white border-b border-[#e2e8f0] px-4 pt-3 pb-6 shadow-xl">
+        <div class="space-y-1">
+          <a href="index.html" class="w-full text-left px-4 py-3 rounded-md text-base font-semibold bg-[#f4edf3] text-[#51304e] border-l-4 border-[#6a4766] flex items-center justify-between">
+            <span>Home</span>
+            <span class="w-2 h-2 rounded-full bg-[#6a4766]"></span>
+          </a>
+          <a href="schedule.html" class="w-full text-left px-4 py-3 rounded-md text-base font-medium text-[#334155] hover:bg-slate-50 flex items-center justify-between">
+            <span>Schedule</span>
+          </a>
+          <a href="panel-members.html" class="w-full text-left px-4 py-3 rounded-md text-base font-medium text-[#334155] hover:bg-slate-50 flex items-center justify-between">
+            <span>Panel Members</span>
+          </a>
+          <a href="organizing-committee.html" class="w-full text-left px-4 py-3 rounded-md text-base font-medium text-[#334155] hover:bg-slate-50 flex items-center justify-between">
+            <span>Organizing Committee</span>
+          </a>
+          <a href="venue-contact.html" class="w-full text-left px-4 py-3 rounded-md text-base font-medium text-[#334155] hover:bg-slate-50 flex items-center justify-between">
+            <span>Venue &amp; Contact</span>
+          </a>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-[#e2e8f0] space-y-3">
+          <div class="flex items-center gap-2 text-xs text-[#64748b] px-2">
+            <i data-lucide="calendar" class="w-4 h-4 text-[#6a4766]"></i>
+            <span>March 18–19, 2027 • Hyderabad, India</span>
+          </div>
+          <a
+            href="https://account.indiahci.org/auth"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full bg-[#6a4766] hover:bg-[#51304e] text-white py-3 rounded-md text-sm font-semibold tracking-wide shadow-sm flex items-center justify-center gap-2"
+          >
+            <span>Register Now (IndiaHCI Auth)</span>
+            <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+
+      <!-- 1. Official Symposium Banner Placeholder Area -->
+      <section class="w-full bg-white border-b border-[#e2e8f0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          
+          <div class="w-full aspect-[3.3/1] min-h-[160px] sm:min-h-[220px] md:min-h-[300px] rounded-xl border-2 border-dashed border-[#cbd5e1] bg-[#f8fafc] flex flex-col items-center justify-center p-6 text-center transition-all hover:border-[#6a4766]/50 shadow-2xs relative">
+            <div class="w-14 h-14 rounded-full bg-[#f4edf3] text-[#6a4766] flex items-center justify-center mb-3 border border-[#e6b9de]/60">
+              <i data-lucide="image" class="w-7 h-7"></i>
+            </div>
+            <h2 class="font-display text-lg sm:text-2xl font-bold text-[#4e324c] mb-1">
+              [Official Symposium Banner Placeholder — BannerFinal.jpg]
+            </h2>
+            <p class="text-xs sm:text-sm text-[#64748b] max-w-lg">
+              Banner Area (Recommended 1600 × 480 • Aspect Ratio ~3.3:1). Ready for manual insertion of original <code class="bg-slate-200/80 px-1.5 py-0.5 rounded text-xs font-mono text-[#1e293b]">BannerFinal.jpg</code>.
+            </p>
+          </div>
+
+          <!-- Sub-banner Badges Bar -->
+          <div class="mt-3 flex flex-wrap items-center justify-between gap-3 text-xs text-[#475569] bg-[#f8fafc] px-4 py-2.5 rounded-md border border-[#e2e8f0]">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#3b82f6] animate-pulse"></span>
+              <span class="font-bold text-[#1e293b] tracking-wide uppercase text-[11px]">
+                National Human–Computer Interaction Symposium
+              </span>
+            </div>
+            <div class="flex items-center gap-6">
+              <div class="flex items-center gap-1.5 text-[#0369a1]">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <span class="font-semibold text-xs">NAAC A+ Accredited</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-[#475569]">
+                <i data-lucide="award" class="w-4 h-4 text-[#6a4766]"></i>
+                <span class="font-semibold text-xs">NBA Recognised</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. Hero Convocation Section -->
+      <section class="py-12 lg:py-16 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            
+            <!-- Left 8 Cols -->
+            <div class="lg:col-span-8 space-y-6">
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-wider uppercase text-[#6a4766] bg-[#f4edf3] px-3.5 py-1.5 rounded-full border border-[#e6b9de]/60">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#7c3aed]"></i>
+                <span>Symposium Convocation 2027 • In-Person</span>
+              </div>
+
+              <div>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-5xl font-bold text-[#4e324c] tracking-tight leading-[1.15]">
+                  HCI for Interactive &amp; Immersive Experience
+                </h1>
+                <p class="font-display italic text-2xl sm:text-3xl text-[#51304e] mt-2 font-normal">
+                  “One Experience. Many perspectives.”
+                </p>
+              </div>
+
+              <p class="text-base sm:text-lg text-[#475569] leading-relaxed max-w-2xl font-normal">
+                Welcome to the annual convergence of researchers, product architects, and behavioral
+                scientists unraveling pioneering breakthroughs across multimodal environments, spatial
+                computing, and culturally resonant interaction paradigms.
+              </p>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a
+                  href="https://account.indiahci.org/auth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bg-[#6a4766] hover:bg-[#51304e] active:scale-[0.98] text-white px-6 py-3 rounded-md text-sm font-semibold tracking-wide shadow-sm hover:shadow-md transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <i data-lucide="ticket" class="w-4 h-4"></i>
+                  <span>Register for Symposium</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80"></i>
+                </a>
+
+                <a
+                  href="schedule.html"
+                  class="bg-white hover:bg-slate-50 text-[#4e324c] border border-[#6a4766]/30 px-6 py-3 rounded-md text-sm font-semibold tracking-wide transition-all flex items-center gap-2 cursor-pointer shadow-2xs"
+                >
+                  <i data-lucide="calendar" class="w-4 h-4 text-[#3b82f6]"></i>
+                  <span>View Detailed Schedule</span>
+                </a>
+              </div>
+
+              <!-- Meta Tags Row -->
+              <div class="flex flex-wrap items-center gap-6 pt-4 text-xs font-medium text-[#64748b] border-t border-[#e2e8f0]/80">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-[#6a4766]"></i>
+                  <span>March 18–19, 2027</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="layers" class="w-4 h-4 text-[#3b82f6]"></i>
+                  <span>VR Lab &amp; Multimodal Studios</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i data-lucide="award" class="w-4 h-4 text-[#7c3aed]"></i>
+                  <span>Peer-Reviewed Academic Track</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right 4 Cols: Symposium In Numbers -->
+            <div class="lg:col-span-4">
+              <div class="bg-white rounded-xl border border-[#dbeafe] shadow-[0_4px_20px_-2px_rgba(106,71,102,0.06)] overflow-hidden">
+                <div class="p-5 border-b border-[#f1f5f9] flex items-center justify-between bg-slate-50/50">
+                  <span class="text-xs font-bold tracking-wider text-[#475569] uppercase">
+                    Symposium in Numbers
+                  </span>
+                  <i data-lucide="compass" class="w-4 h-4 text-[#3b82f6]"></i>
+                </div>
+
+                <div class="p-5 grid grid-cols-2 gap-4">
+                  <div class="p-3 bg-[#f8fafc] rounded-lg border border-[#e2e8f0]/60">
+                    <span class="font-display text-3xl font-bold text-[#4e324c] block">
+                      02
+                    </span>
+                    <span class="text-xs text-[#64748b] mt-0.5 block font-medium">
+                      Symposium Days
+                    </span>
+                  </div>
+
+                  <div class="p-3 bg-[#f8fafc] rounded-lg border border-[#e2e8f0]/60">
+                    <span class="font-display text-2xl font-bold text-[#4e324c] block">
+                      [TBA]
+                    </span>
+                    <span class="text-xs text-[#64748b] mt-0.5 block font-medium">
+                      Keynotes &amp; Panels
+                    </span>
+                  </div>
+
+                  <div class="p-3 bg-[#f8fafc] rounded-lg border border-[#e2e8f0]/60">
+                    <span class="font-display text-3xl font-bold text-[#4e324c] block">
+                      04
+                    </span>
+                    <span class="text-xs text-[#64748b] mt-0.5 block font-medium">
+                      Targeted Labs
+                    </span>
+                  </div>
+
+                  <div class="p-3 bg-[#f8fafc] rounded-lg border border-[#e2e8f0]/60">
+                    <span class="font-display text-3xl font-bold text-[#4e324c] block">
+                      200+
+                    </span>
+                    <span class="text-xs text-[#64748b] mt-0.5 block font-medium">
+                      <span class="text-red-600 font-semibold">[PROPOSED]</span> Expected Delegates
+                    </span>
+                  </div>
+                </div>
+
+                <div class="bg-[#f0f9ff] px-5 py-3 border-t border-[#bae6fd] flex items-center justify-between text-xs">
+                  <div>
+                    <span class="font-bold text-[#0369a1] block">Early Bird Registration</span>
+                    <span class="text-[#0c4a6e] font-medium">Ends February 28, 2027</span>
+                  </div>
+                  <i data-lucide="clock" class="w-4 h-4 text-[#0284c7]"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Scholarly Charter -->
+      <section class="py-14 bg-white border-y border-[#e2e8f0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-[#e2e8f0]">
+            <div>
+              <span class="text-xs font-bold tracking-widest text-[#6a4766] uppercase block mb-1">
+                Scholarly Charter ✦ HCIPAI Fellowship
+              </span>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#4e324c]">
+                Bridging Human Intuition &amp; Spatial Horizons
+              </h2>
+            </div>
+            <p class="text-sm text-[#64748b] max-w-md">
+              A dual inquiry uniting traditional cultural iconography with pioneering digital
+              ergonomics, tactile surfaces, and ambient spatial intelligence.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            
+            <!-- Left Column -->
+            <div class="lg:col-span-5 bg-[#faf9fb] rounded-xl border border-[#e2e8f0] overflow-hidden flex flex-col">
+              <div class="relative h-60 w-full overflow-hidden bg-slate-900">
+                <img
+                  src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=800&auto=format&fit=crop"
+                  alt="Interactive Labs Exhibition"
+                  class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute top-3 left-3 bg-black/70 backdrop-blur-xs text-white text-[11px] font-semibold px-2.5 py-1 rounded">
+                  Interactive Labs Exhibition
+                </div>
+              </div>
+
+              <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                <div>
+                  <h3 class="font-display text-xl font-bold text-[#4e324c] mb-2">
+                    The HCIPAI Inception
+                  </h3>
+                  <p class="text-sm text-[#64748b] leading-relaxed">
+                    The Human-Computer Interaction Professionals Association of India convenes its
+                    flagship 2027 symposium to challenge deterministic computing. Through experiential
+                    prototypes, multi-sensory feedback loops, and cognitive architecture, our
+                    symposium fosters dialogues that place collective human wellbeing at the nexus of technology.
+                  </p>
+                </div>
+
+                <div>
+                  <a
+                    href="panel-members.html"
+                    class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#6a4766] hover:text-[#51304e] group cursor-pointer"
+                  >
+                    <span>Explore Association Mission</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: 3 Research Tracks -->
+            <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+              
+              <!-- Track 1 -->
+              <div class="p-5 bg-white rounded-xl border border-[#e2e8f0] hover:border-[#6a4766]/40 transition-all shadow-xs flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-[#f4edf3] text-[#6a4766] flex items-center justify-center shrink-0 border border-[#e6b9de]/40">
+                  <i data-lucide="cpu" class="w-6 h-6"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <h4 class="font-display text-lg font-bold text-[#1e293b]">
+                      Interactive Systems &amp; Generative AI
+                    </h4>
+                    <span class="text-[10px] font-bold text-[#2563eb] bg-[#eff6ff] px-2 py-0.5 rounded border border-[#bfdbfe]">
+                      TRACK 01
+                    </span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                    Investigating adaptive conversational agents, predictive gesture systems, dynamic ergonomics,
+                    and human-in-the-loop interfaces designed for enterprise and accessibility applications.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Track 2 -->
+              <div class="p-5 bg-white rounded-xl border border-[#e2e8f0] hover:border-[#3b82f6]/40 transition-all shadow-xs flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-[#eff6ff] text-[#2563eb] flex items-center justify-center shrink-0 border border-[#bfdbfe]/50">
+                  <i data-lucide="layers" class="w-6 h-6"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <h4 class="font-display text-lg font-bold text-[#1e293b]">
+                      Immersive AR/VR &amp; Multimodal Interfaces
+                    </h4>
+                    <span class="text-[10px] font-bold text-[#2563eb] bg-[#eff6ff] px-2 py-0.5 rounded border border-[#bfdbfe]">
+                      TRACK 02
+                    </span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                    From spatial telepresence and haptic arrays to cross-reality simulations, dissecting how immersive
+                    sensory cues influence memory retention, collaboration, and spatial awareness.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Track 3 -->
+              <div class="p-5 bg-white rounded-xl border border-[#e2e8f0] hover:border-[#7c3aed]/40 transition-all shadow-xs flex items-start gap-4">
+                <div class="w-12 h-12 rounded-lg bg-[#f5f3ff] text-[#7c3aed] flex items-center justify-center shrink-0 border border-[#ddd6fe]/50">
+                  <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+                <div class="flex-1">
+                  <div class="flex items-center justify-between gap-2 mb-1">
+                    <h4 class="font-display text-lg font-bold text-[#1e293b]">
+                      Inclusive &amp; Cultural Design in Tech
+                    </h4>
+                    <span class="text-[10px] font-bold text-[#2563eb] bg-[#eff6ff] px-2 py-0.5 rounded border border-[#bfdbfe]">
+                      TRACK 03
+                    </span>
+                  </div>
+                  <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                    Rooting technological interactions in contextual semantics, indigenous design languages,
+                    vernacular typography, and ethical paradigms celebrating South Asian socio-technical diversity.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Three Ways to Experience HCIPAI 2027 -->
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <span class="text-xs font-bold tracking-widest text-[#6a4766] uppercase block mb-1">
+              Experiential Curation
+            </span>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#4e324c]">
+              Three Ways to Experience HCIPAI 2027
+            </h2>
+            <div class="flex items-center justify-center gap-2 my-2 text-[#3b82f6]">
+              <span class="h-px w-8 bg-[#dbeafe]"></span>
+              <span class="text-xs">❖</span>
+              <span class="h-px w-8 bg-[#dbeafe]"></span>
+            </div>
+            <p class="text-sm text-[#64748b]">
+              Engage directly through provocative intellectual debates, hands-on masterclasses, and walkthrough installation environments.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Card 1 -->
+            <div class="bg-white rounded-xl border border-[#e2e8f0] p-6 hover:shadow-md transition-all flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-[#f4edf3] text-[#6a4766] flex items-center justify-center">
+                  <i data-lucide="presentation" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[11px] font-bold text-[#64748b] uppercase tracking-wider block">
+                  KEYNOTE AUDITORIUM
+                </span>
+                <h3 class="font-display text-2xl font-bold text-[#1e293b]">
+                  Panel Discussions
+                </h3>
+                <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                  Plenary debates featuring global academicians, design executives, and policy leaders examining
+                  algorithmic accountability, spatial UX standards, and cognitive ergonomics.
+                </p>
+                <ul class="space-y-2 pt-2 text-xs text-[#334155]">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>6 Thematic Debate Podiums</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Live Audience Q&amp;A Telemetry</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Published Panel Whitepapers</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pt-6">
+                <a
+                  href="panel-members.html"
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-[#6a4766] hover:text-[#51304e] group cursor-pointer"
+                >
+                  <span>Meet the Panellists</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white rounded-xl border border-[#e2e8f0] p-6 hover:shadow-md transition-all flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-[#eff6ff] text-[#2563eb] flex items-center justify-center">
+                  <i data-lucide="wrench" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[11px] font-bold text-[#64748b] uppercase tracking-wider block">
+                  STUDIO LABS A &amp; B
+                </span>
+                <h3 class="font-display text-2xl font-bold text-[#1e293b]">
+                  Hands-on Workshops
+                </h3>
+                <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                  Four targeted technical workshops covering Spatial Prototyping in Unity &amp; VisionOS,
+                  Ethnographic Fieldwork for AI, and Multimodal Biosensor Integration.
+                </p>
+                <ul class="space-y-2 pt-2 text-xs text-[#334155]">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Dedicated Hardware Toolkits Provided</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Certificate of Masterclass Mastery</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Mentorship from Industry Leads</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pt-6">
+                <a
+                  href="schedule.html"
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-[#6a4766] hover:text-[#51304e] group cursor-pointer"
+                >
+                  <span>Review Lab Schedules</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white rounded-xl border border-[#e2e8f0] p-6 hover:shadow-md transition-all flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="w-10 h-10 rounded-lg bg-[#f5f3ff] text-[#7c3aed] flex items-center justify-center">
+                  <i data-lucide="flame" class="w-5 h-5"></i>
+                </div>
+                <span class="text-[11px] font-bold text-[#64748b] uppercase tracking-wider block">
+                  EXPERIENCE PAVILION
+                </span>
+                <h3 class="font-display text-2xl font-bold text-[#1e293b]">
+                  Interactive Zones
+                </h3>
+                <p class="text-xs sm:text-sm text-[#64748b] leading-relaxed">
+                  Live interactive demonstrations featuring 24 curated student and faculty installations,
+                  real-time spatial projection mappings, and experimental wearable hardware.
+                </p>
+                <ul class="space-y-2 pt-2 text-xs text-[#334155]">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Open Demos &amp; Walkthrough Critiques</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Best Installation Peoples' Choice Award</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-4 h-4 text-[#3b82f6]"></i>
+                    <span>Direct Recruiter &amp; Grant Connects</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="pt-6">
+                <a
+                  href="venue-contact.html"
+                  class="inline-flex items-center gap-1.5 text-xs font-bold text-[#6a4766] hover:text-[#51304e] group cursor-pointer"
+                >
+                  <span>Explore Pavilion Map</span>
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 5. Registration Fee Section -->
+      <section id="registration-fees" class="py-16 bg-white border-y border-[#e2e8f0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="text-center max-w-2xl mx-auto mb-12">
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase bg-red-50 text-red-700 border border-red-200 mb-2">
+              <i data-lucide="info" class="w-3.5 h-3.5"></i>
+              <span>[PROPOSED — NOT CONFIRMED]</span>
+            </div>
+            <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#4e324c]">
+              Registration Fee
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Early Bird Tier -->
+            <div class="rounded-xl border border-[#e2e8f0] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+              <div class="h-1.5 w-full bg-[#3b82f6]"></div>
+              <div class="p-6 space-y-4 flex-1">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold tracking-wider uppercase text-[#6a4766]">LIMITED TIME</span>
+                  <span class="text-[#64748b] font-medium">Until Feb 28</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-[#1e293b]">Early Bird</h3>
+                <p class="text-xs text-[#64748b] leading-relaxed">
+                  Discounted pricing available for scholars and academicians registering in the initial phase.
+                </p>
+
+                <div class="space-y-3 pt-2 pb-3 border-y border-[#f1f5f9]">
+                  <div class="flex items-baseline justify-between">
+                    <span class="text-xs text-[#475569] font-medium">Students</span>
+                    <div class="text-right">
+                      <span class="font-display text-2xl font-bold text-[#1e293b]">₹1,000</span>
+                      <span class="text-[11px] text-[#64748b] ml-1">/person</span>
+                    </div>
+                  </div>
+                  <div class="flex items-baseline justify-between">
+                    <span class="text-xs text-[#475569] font-medium">Professionals / Academicians</span>
+                    <div class="text-right">
+                      <span class="font-display text-2xl font-bold text-[#1e293b]">₹1,500</span>
+                      <span class="text-[11px] text-[#64748b] ml-1">/person</span>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="space-y-2 text-xs text-[#334155] pt-1">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Full 2-day keynotes access</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Delegate welcome symposium kit</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Networking lunches &amp; coffee sessions</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Digital proceeding abstracts</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Regular Tier (Highlighted) -->
+            <div class="rounded-xl border border-[#6a4766] ring-1 ring-[#6a4766]/30 bg-white overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+              <div class="h-1.5 w-full bg-[#6a4766]"></div>
+              <div class="p-6 space-y-4 flex-1">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold tracking-wider uppercase text-[#6a4766]">STANDARD ACCESS</span>
+                  <span class="text-[#64748b] font-medium">Starts Mar 01</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-[#1e293b]">Regular</h3>
+                <p class="text-xs text-[#64748b] leading-relaxed">
+                  Standard symposium admission applicable across all delegates, universities, and industry.
+                </p>
+
+                <div class="space-y-3 pt-2 pb-3 border-y border-[#f1f5f9]">
+                  <div class="flex items-baseline justify-between">
+                    <span class="text-xs text-[#475569] font-medium">Students</span>
+                    <div class="text-right">
+                      <span class="font-display text-2xl font-bold text-[#1e293b]">₹1,500</span>
+                      <span class="text-[11px] text-[#64748b] ml-1">/person</span>
+                    </div>
+                  </div>
+                  <div class="flex items-baseline justify-between">
+                    <span class="text-xs text-[#475569] font-medium">Professionals / Academicians</span>
+                    <div class="text-right">
+                      <span class="font-display text-2xl font-bold text-[#1e293b]">₹2,000</span>
+                      <span class="text-[11px] text-[#64748b] ml-1">/person</span>
+                    </div>
+                  </div>
+                </div>
+
+                <ul class="space-y-2 text-xs text-[#334155] pt-1">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Complete symposium passes</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Formal participation certificate</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>All meals &amp; symposium gala reception</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Interactive demo zone entry pass</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- HCIPAI Members Tier -->
+            <div class="rounded-xl border border-[#e2e8f0] bg-white overflow-hidden shadow-xs hover:shadow-md transition-all flex flex-col justify-between">
+              <div class="h-1.5 w-full bg-[#3b82f6]"></div>
+              <div class="p-6 space-y-4 flex-1">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="font-bold tracking-wider uppercase text-[#6a4766]">MEMBERS PRIVILEGE</span>
+                </div>
+                <h3 class="font-display text-2xl font-bold text-[#1e293b]">HCIPAI Members</h3>
+                <p class="text-xs text-[#64748b] leading-relaxed">
+                  Exclusive subsidized tariff for valid members of HCIPAI Association of India.
+                </p>
+
+                <div class="space-y-3 pt-2 pb-3 border-y border-[#f1f5f9]">
+                  <div class="flex items-baseline justify-between">
+                    <span class="text-xs text-[#475569] font-medium">All Members (Flat Fee)</span>
+                    <div class="text-right">
+                      <span class="font-display text-2xl font-bold text-[#1e293b]">₹1,000</span>
+                      <span class="text-[11px] text-[#64748b] ml-1">/flat rate</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-[11px] text-[#7c3aed] bg-[#f5f3ff] p-2 rounded border border-[#ddd6fe]">
+                    <i data-lucide="info" class="w-3.5 h-3.5 shrink-0"></i>
+                    <span>Active Member ID verified during checkout</span>
+                  </div>
+                </div>
+
+                <ul class="space-y-2 text-xs text-[#334155] pt-1">
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Priority seating in Keynote Hall</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Guaranteed hands-on workshop seat</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Invitation to Annual General Meeting</span>
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-[#3b82f6] shrink-0"></i>
+                    <span>Full access to digital archives &amp; kits</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Two Days of Cutting-Edge Discovery -->
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-[#e2e8f0]">
+            <div>
+              <span class="text-xs font-bold tracking-widest text-[#6a4766] uppercase block mb-1">
+                Program Overview
+              </span>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold text-[#4e324c]">
+                Two Days of Cutting-Edge Discovery
+              </h2>
+              <p class="text-sm text-[#64748b] mt-1">
+                March 18 &amp; 19, 2027 feature parallel academic paper streams, demonstration booths, and evening fellowship banquets.
+              </p>
+            </div>
+
+            <div>
+              <a
+                href="schedule.html"
+                class="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-5 py-2.5 rounded-md text-xs font-bold tracking-wide uppercase shadow-xs flex items-center gap-2 cursor-pointer"
+              >
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+                <span>Explore Complete Timeline</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Day 1 Column -->
+            <div class="bg-white rounded-xl border border-[#e2e8f0] p-6 shadow-xs space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-[#e2e8f0]">
+                <div>
+                  <span class="text-[11px] font-bold text-[#6a4766] tracking-wider uppercase block">
+                    DAY 01
+                  </span>
+                  <h3 class="font-display text-xl font-bold text-[#1e293b]">
+                    Thursday, March 18, 2027
+                  </h3>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-200">
+                  <i data-lucide="sun" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+              <div class="space-y-4 divide-y divide-[#f1f5f9]">
+                <div class="pt-2 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">09:00 AM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Inauguration &amp; Keynote Address</h4>
+                    <p class="text-xs text-[#64748b]">Welcome address by HCIPAI Chairs &amp; Invited Global Luminaries [TBA]</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">11:30 AM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Track 1: Spatial &amp; Immersive UX</h4>
+                    <p class="text-xs text-[#64748b]">Peer-reviewed papers on virtual presence and multi-user spatial audio</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">02:30 PM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Interactive Zone Live Showcases</h4>
+                    <p class="text-xs text-[#64748b]">Installation demonstrations by nominated student and faculty labs</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">04:30 PM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Panel Debate: Ethics in Spatial AI</h4>
+                    <p class="text-xs text-[#64748b]">Auditorium hall open discussion on neural interfaces and biometric data</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Day 2 Column -->
+            <div class="bg-white rounded-xl border border-[#e2e8f0] p-6 shadow-xs space-y-4">
+              <div class="flex items-center justify-between pb-3 border-b border-[#e2e8f0]">
+                <div>
+                  <span class="text-[11px] font-bold text-[#6a4766] tracking-wider uppercase block">
+                    DAY 02
+                  </span>
+                  <h3 class="font-display text-xl font-bold text-[#1e293b]">
+                    Friday, March 19, 2027
+                  </h3>
+                </div>
+                <div class="w-9 h-9 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center border border-purple-200">
+                  <i data-lucide="star" class="w-5 h-5"></i>
+                </div>
+              </div>
+
+              <div class="space-y-4 divide-y divide-[#f1f5f9]">
+                <div class="pt-2 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">09:30 AM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Morning Plenary: South Asian HCI Paradigms</h4>
+                    <p class="text-xs text-[#64748b]">Vernacular interfaces and multi-lingual multimodal synthesis [TBA]</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">11:00 AM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Parallel Hands-on Masterclasses</h4>
+                    <p class="text-xs text-[#64748b]">Studios A &amp; B: Rapid prototyping for tactile displays and spatial kits</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">02:30 PM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Doctoral Colloquium &amp; Poster Session</h4>
+                    <p class="text-xs text-[#64748b]">Review of ongoing doctoral dissertations and research-in-progress</p>
+                  </div>
+                </div>
+
+                <div class="pt-3 flex items-start gap-4">
+                  <span class="text-xs font-semibold text-[#64748b] w-18 shrink-0">05:00 PM</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-[#1e293b]">Valedictory &amp; HCIPAI Awards Banquet</h4>
+                    <p class="text-xs text-[#64748b]">Honoring exceptional papers, best demos, and community stewards</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Portal Navigation Quick Directory -->
+      <section class="py-12 bg-white border-t border-[#e2e8f0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="mb-6">
+            <span class="text-xs font-bold tracking-widest text-[#6a4766] uppercase block">
+              Portal Navigation
+            </span>
+            <h3 class="font-display text-2xl font-bold text-[#1e293b]">
+              Explore the Full Symposium Directory
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <a
+              href="schedule.html"
+              class="p-5 bg-[#faf9fb] hover:bg-white rounded-xl border border-[#e2e8f0] hover:border-[#6a4766]/50 transition-all text-left group cursor-pointer shadow-2xs block"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#e0f2fe] text-[#0284c7] flex items-center justify-center mb-3">
+                <i data-lucide="clock" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-display text-base font-bold text-[#1e293b] mb-1 group-hover:text-[#6a4766]">
+                Program Schedule
+              </h4>
+              <p class="text-xs text-[#64748b] mb-3">
+                Browse minute-by-minute session timings, keynotes, and lunch hours.
+              </p>
+              <span class="text-xs font-semibold text-[#6a4766] inline-flex items-center gap-1">
+                View Timeline →
+              </span>
+            </a>
+
+            <a
+              href="panel-members.html"
+              class="p-5 bg-[#faf9fb] hover:bg-white rounded-xl border border-[#e2e8f0] hover:border-[#6a4766]/50 transition-all text-left group cursor-pointer shadow-2xs block"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#f3e8ff] text-[#7e22ce] flex items-center justify-center mb-3">
+                <i data-lucide="users" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-display text-base font-bold text-[#1e293b] mb-1 group-hover:text-[#6a4766]">
+                Panel Members
+              </h4>
+              <p class="text-xs text-[#64748b] mb-3">
+                Explore profiles and publications of invited keynote speakers.
+              </p>
+              <span class="text-xs font-semibold text-[#6a4766] inline-flex items-center gap-1">
+                Meet Speakers →
+              </span>
+            </a>
+
+            <a
+              href="organizing-committee.html"
+              class="p-5 bg-[#faf9fb] hover:bg-white rounded-xl border border-[#e2e8f0] hover:border-[#6a4766]/50 transition-all text-left group cursor-pointer shadow-2xs block"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#f4edf3] text-[#6a4766] flex items-center justify-center mb-3">
+                <i data-lucide="presentation" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-display text-base font-bold text-[#1e293b] mb-1 group-hover:text-[#6a4766]">
+                Organizing Committee
+              </h4>
+              <p class="text-xs text-[#64748b] mb-3">
+                Honoring patron leadership, academic review chairs, and mentors.
+              </p>
+              <span class="text-xs font-semibold text-[#6a4766] inline-flex items-center gap-1">
+                Committee Roster →
+              </span>
+            </a>
+
+            <a
+              href="venue-contact.html"
+              class="p-5 bg-[#faf9fb] hover:bg-white rounded-xl border border-[#e2e8f0] hover:border-[#6a4766]/50 transition-all text-left group cursor-pointer shadow-2xs block"
+            >
+              <div class="w-8 h-8 rounded-lg bg-[#e0f2fe] text-[#0284c7] flex items-center justify-center mb-3">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </div>
+              <h4 class="font-display text-base font-bold text-[#1e293b] mb-1 group-hover:text-[#6a4766]">
+                Venue &amp; Inquiries
+              </h4>
+              <p class="text-xs text-[#64748b] mb-3">
+                Interactive map, transport logistics, and symposium secretariat info.
+              </p>
+              <span class="text-xs font-semibold text-[#6a4766] inline-flex items-center gap-1">
+                Location &amp; Help →
+              </span>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-white border-t border-[#e2e8f0] pt-14 pb-10 text-[#334155] relative overflow-hidden">
+      <div class="absolute inset-0 bg-arch-grid opacity-30 pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-[#e2e8f0]">
+          
+          <!-- Column 1: Brand -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded overflow-hidden bg-white p-0.5 border border-[#e2e8f0]">
+                <img
+                  src="HCIPAI png logo(1) (1).png"
+                  alt="HCIPAI"
+                  data-fallback="HCIPAI_logo.svg"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <h3 class="font-display text-xl font-bold text-[#4e324c] tracking-tight">
+                HCIPAI 2027
+              </h3>
+            </div>
+
+            <p class="text-sm text-[#64748b] leading-relaxed max-w-md">
+              International Symposium on Human–Computer Interaction for Interactive &amp; Immersive Experience.
+              Bringing together researchers, practitioners, and scholars across pioneering HCI paradigms.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 text-xs text-[#475569] pt-2">
+              <div class="flex items-center gap-1.5 bg-[#f8fafc] px-2.5 py-1 rounded border border-[#e2e8f0]">
+                <i data-lucide="calendar" class="w-3.5 h-3.5 text-[#6a4766]"></i>
+                <span class="font-medium">March 18–19, 2027</span>
+              </div>
+              <a 
+                href="venue-contact.html"
+                class="flex items-center gap-1.5 bg-[#f8fafc] hover:bg-[#f1f5f9] px-2.5 py-1 rounded border border-[#e2e8f0] transition-colors cursor-pointer text-left"
+              >
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-[#3b82f6]"></i>
+                <span class="font-medium text-[#1e293b]">GCET Campus, Cheeryal, Keesara</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Routes -->
+          <div class="lg:col-span-3 space-y-3">
+            <h4 class="text-sm font-bold text-[#1e293b] tracking-wider uppercase flex items-center gap-1.5">
+              <span>Symposium Routes</span>
+              <span class="text-[#3b82f6] text-xs">❖</span>
+            </h4>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li>
+                <a href="index.html" class="hover:text-[#51304e] hover:translate-x-0.5 transition-all inline-block">
+                  About &amp; Overview
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://account.indiahci.org/auth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-[#51304e] hover:translate-x-0.5 transition-all cursor-pointer inline-flex items-center gap-1"
+                >
+                  <span>Registration &amp; Auth</span>
+                  <i data-lucide="external-link" class="w-3 h-3 text-[#3b82f6]"></i>
+                </a>
+              </li>
+              <li>
+                <a href="schedule.html" class="hover:text-[#51304e] hover:translate-x-0.5 transition-all inline-block">
+                  Symposium Schedule
+                </a>
+              </li>
+              <li>
+                <a href="panel-members.html" class="hover:text-[#51304e] hover:translate-x-0.5 transition-all inline-block">
+                  Panel &amp; Keynotes
+                </a>
+              </li>
+              <li>
+                <a href="organizing-committee.html" class="hover:text-[#51304e] hover:translate-x-0.5 transition-all inline-block">
+                  Organizing Committee
+                </a>
+              </li>
+              <li>
+                <a href="venue-contact.html" class="hover:text-[#51304e] hover:translate-x-0.5 transition-all inline-block">
+                  Venue &amp; Inquiries
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Accreditation -->
+          <div class="lg:col-span-4">
+            <div class="bg-[#f0f9ff]/70 border border-[#bae6fd]/80 rounded-xl p-5 shadow-xs">
+              <div class="flex items-center gap-2 mb-2 text-[#0369a1]">
+                <i data-lucide="shield-check" class="w-5 h-5 shrink-0"></i>
+                <h4 class="text-sm font-bold tracking-tight text-[#0c4a6e]">
+                  Accreditation &amp; Affiliations
+                </h4>
+              </div>
+              <p class="text-xs text-[#334155] leading-relaxed mb-4">
+                Organized in academic association with HCIPAI. Hosted by institutions recognized with NAAC A+
+                Accreditation and NBA-accredited computing &amp; design programs.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider bg-white border border-[#38bdf8]/50 text-[#0284c7] shadow-2xs">
+                  NAAC A+ RATED
+                </span>
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider bg-white border border-[#94a3b8]/40 text-[#334155] shadow-2xs">
+                  NBA ACCREDITED
+                </span>
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-[11px] font-bold tracking-wider bg-[#f3e8ff] border border-[#d8b4fe]/60 text-[#7e22ce] shadow-2xs">
+                  HCIPAI CHAPTER
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Legal -->
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#64748b] gap-4">
+          <p>
+            © 2027 HCIPAI. All rights reserved. Human–Computer Interaction Professionals Association of India.
+          </p>
+          <div class="flex flex-wrap items-center gap-4 text-xs">
+            <a href="venue-contact.html" class="hover:text-[#51304e] transition-colors">
+              Contact Secretariat
+            </a>
+            <span>•</span>
+            <span class="hover:text-[#51304e] transition-colors cursor-pointer">
+              Privacy Policy
+            </span>
+            <span>•</span>
+            <span class="hover:text-[#51304e] transition-colors cursor-pointer">
+              Terms &amp; Code of Conduct
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+    <!-- Shared Script -->
+    <script src="js/common.js"></script>
   </body>
 </html>
-
