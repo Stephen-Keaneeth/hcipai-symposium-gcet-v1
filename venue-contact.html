@@ -203,33 +203,25 @@
           <!-- Left Column: Campus Details & Interactive Geographic Locator (7 Cols) -->
           <div class="lg:col-span-7 bg-white rounded-xl border border-[#e2e8f0] p-6 shadow-xs space-y-6">
             
-            <!-- Institution Brand & Gate Photo Placeholders -->
+            <!-- Institution Brand & Campus Photo -->
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#f1f5f9]">
               
-              <!-- College Logo Placeholder -->
-              <div class="w-full sm:w-[280px] h-20 rounded-lg border-2 border-dashed border-[#94a3b8]/60 bg-[#f8fafc] flex flex-col items-center justify-center p-2 text-center">
-                <div class="flex items-center gap-1.5 text-[#0369a1] mb-0.5">
-                  <i data-lucide="image" class="w-4 h-4"></i>
-                  <span class="text-xs font-bold uppercase tracking-wider">
-                    [College Logo Placeholder]
-                  </span>
-                </div>
-                <span class="text-[10px] text-[#64748b]">
-                  Insert <code class="font-mono text-[#0f172a]">image.png</code> here
-                </span>
+              <!-- College Logo -->
+              <div class="w-full sm:w-[280px] h-20 rounded-lg border border-[#e2e8f0] bg-white flex items-center justify-center p-2 shadow-xs">
+                <img
+                  src="imgs/gcet-logo.png"
+                  alt="Geethanjali College of Engineering and Technology Logo"
+                  class="w-full h-full object-contain"
+                />
               </div>
 
-              <!-- Campus Gate Photo Placeholder -->
-              <div class="w-full sm:w-48 h-20 rounded-lg border-2 border-dashed border-[#94a3b8]/60 bg-[#f8fafc] flex flex-col items-center justify-center p-2 text-center shrink-0">
-                <div class="flex items-center gap-1.5 text-[#6a4766] mb-0.5">
-                  <i data-lucide="image" class="w-4 h-4"></i>
-                  <span class="text-[11px] font-bold uppercase tracking-wider">
-                    [Campus Photo Placeholder]
-                  </span>
-                </div>
-                <span class="text-[10px] text-[#64748b]">
-                  Insert Campus Gate 1 Photo
-                </span>
+              <!-- Campus Photo -->
+              <div class="w-full sm:w-48 h-20 rounded-lg border border-[#e2e8f0] bg-white overflow-hidden shadow-xs shrink-0 group relative">
+                <img
+                  src="imgs/campus.jpg"
+                  alt="GCET Campus Ground and Academic Block"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
               </div>
             </div>
 
@@ -539,7 +531,7 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="js/common.js"></script>
-    <script src="js/venue-contact.js"></script>
+    <script type="module" src="js/common.js"></script>
+    <script type="module" src="js/venue-contact.js"></script>
   </body>
 </html>
